@@ -56,23 +56,31 @@ while n!="end":
 print("\n")  
 print("Successfully pushed into stack")        
 print("\n")        
-op1=input("ENTER WHICH METHOD\n POP, PEEK, ISEMPTY, DISPLAY:  ")  
-if  op1=="pop" or op1=="POP" or op1=="Pop":
-    print("\n")
-    ob.pop()
-    print("\n")
-elif op1=="PEEK" or op1=="Peek" or op1=="peek":
-    print("\n")
-    ob.peek()
-    print("\n")
-elif op1=="ISEMPTY" or op1=="Isempty" or op1=="isempty":
-    print("\n")
-    ob.isempty()  
-    print("\n")
-elif op1=="DISPLAY" or op1=="Display" or op1=="display":
-    print("\n")
-    print("all elements from top to bottom")
-    ob.display()    
-    print("\n")
-else:
-    print("METHOD NOT FOUND")
+op1=0 
+while op1!="end":
+    op1=input("ENTER WHICH METHOD\n POP, PEEK, ISEMPTY, DISPLAY:  ")  
+    if  op1=="pop" or op1=="POP" or op1=="Pop":
+        print("\n")
+        ob.pop()
+        print("\n")
+        print("__________________________________________________________________")
+    elif op1=="PEEK" or op1=="Peek" or op1=="peek":
+        print("\n")
+        ob.peek()
+        print("\n")
+        print("__________________________________________________________________")        
+    elif op1=="ISEMPTY" or op1=="Isempty" or op1=="isempty":
+        print("\n")
+        ob.isempty()  
+        print("\n")
+        print("__________________________________________________________________")        
+    elif op1=="DISPLAY" or op1=="Display" or op1=="display":
+        print("\n")
+        print("all elements from top to bottom")
+        ob.display()    
+        print("\n")
+        print("__________________________________________________________________")        
+    else:
+        print("METHOD NOT FOUND")
+        print("__________________________________________________________________")        
+
