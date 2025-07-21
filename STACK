@@ -1,0 +1,78 @@
+class node:
+    def __init__(self,val):
+        self.data=val
+        self.next= None
+class stack:
+    def __init__(self):
+        self.top=None
+        self.popy=None
+        self.popy2=None
+    def push(self,val):  #correct  
+        n_node=node(val)
+        n_node.next=self.top
+        self.top=n_node
+        #print("push element:",self.top.data)
+    def pop(self):
+        d=self.top.next
+        n=None
+        while d!=None:
+            value=d.data
+            d=d.next
+            delta=node(value)
+            delta.next=self.popy
+            self.popy=delta
+        #print the new top value after deleting
+        de=self.popy
+        while de is not None:
+            value=de.data
+            de=de.next
+            malta=node(value)
+            malta.next=self.popy2
+            self.popy2=malta
+        print("Remove and return the top element:",self.popy2.data)    
+    def peek(self):
+        print("Top element without removing it:",self.top.data)
+    def isempty(self):#correct
+        if self.top==None:
+            print("Empty")
+        else:
+            print("Not empty")
+    def display(self):#correct
+        d=self.top
+        n=None
+        while d!=None:
+            print(d.data)
+            d=d.next
+ob=stack()
+print("ENTER ELEMENT TO PUSH INTO STACK ")
+n=0
+while n!="end":
+        n=input("enter value to push into stack or enter [END] to stop\n")
+        if n=="end" or n=="END" or n=="End":
+            break
+        else:
+            num=int(n)
+            ob.push(num)
+print("\n")  
+print("Successfully pushed into stack")        
+print("\n")        
+op1=input("ENTER WHICH METHOD\n POP, PEEK, ISEMPTY, DISPLAY:  ")  
+if  op1=="pop" or op1=="POP" or op1=="Pop":
+    print("\n")
+    ob.pop()
+    print("\n")
+elif op1=="PEEK" or op1=="Peek" or op1=="peek":
+    print("\n")
+    ob.peek()
+    print("\n")
+elif op1=="ISEMPTY" or op1=="Isempty" or op1=="isempty":
+    print("\n")
+    ob.isempty()  
+    print("\n")
+elif op1=="DISPLAY" or op1=="Display" or op1=="display":
+    print("\n")
+    print("all elements from top to bottom")
+    ob.display()    
+    print("\n")
+else:
+    print("METHOD NOT FOUND")
