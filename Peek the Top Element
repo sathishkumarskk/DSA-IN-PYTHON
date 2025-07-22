@@ -1,0 +1,37 @@
+class node:
+    def __init__(self,val):
+        self.data=val
+        self.next=None
+class stack:
+    def __init__(self):
+        self.top=None
+    def push(self,value):
+        n_node=node(value)
+        n_node.next=self.top
+        self.top=n_node
+        #print(self.top.data)
+    def peek(self):
+        print("top element :",self.top.data)
+ob=stack()
+ob=stack()
+print("ENTER ELEMENT TO PUSH INTO STACK ")
+n=0
+while n!="end":
+        n=input("enter value to push into stack or enter [END] to stop\n")
+        if n=="end" or n=="END" or n=="End":
+            break
+        else:
+            num=int(n)
+            ob.push(num)
+print("\n")  
+print("Successfully pushed into stack")   
+op1=0 
+while op1!="end":
+    op1=input("ENTER METHOD PEEK:  ") 
+    if op1=="PEEK" or op1=="Peek" or op1=="peek":
+        print("\n")
+        ob.peek()
+        print("\n")
+        print("__________________________________________________________________") 
+    else:
+        print("METHOD NOT FOUND")
