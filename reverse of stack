@@ -1,0 +1,24 @@
+class node:
+    def __init__(self,value):
+      self.val=value
+      self.next=None
+class stack:
+    def __init__(self):
+        self.top=None
+    def push(self,value):
+     s=node(value)
+     s.next=self.top
+     self.top=s
+    def reverse(self):
+         print("reverse of stack")
+         n=self.top
+         while n !=None:
+             print(n.val)
+             n=n.next
+c=stack()
+c.push(10)
+c.push(20)
+c.push(30)
+c.reverse()
+
+        
