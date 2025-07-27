@@ -1,22 +1,33 @@
 class node:
     def __init__(self,val):
         self.data=val
-        self.next=None
+        self.next= None
 class stack:
     def __init__(self):
         self.top=None
-    def push(self,value):
-        n_node=node(value)
+        self.popy=None
+        self.popy2=None
+    def push(self,val):  #correct  
+        n_node=node(val)
         n_node.next=self.top
         self.top=n_node
-        #print(self.top.data)
-    def count(self):
+    def pop(self):
+      print("Remove and return the top element:",self.top.next.data)     
+      if self.top!=None:
+        self.top=self.top.next
+    def peek(self):
+        print("Top element without removing it:",self.top.data)
+    def isempty(self):#correct
+        if self.top==None:
+            print("Empty")
+        else:
+            print("Not empty")
+    def display(self):#correct
         d=self.top
-        c=0
+        n=None
         while d!=None:
-            c+=1
+            print(d.data)
             d=d.next
-            print(c)    
 ob=stack()
 print("ENTER ELEMENT TO PUSH INTO STACK ")
 n=0
@@ -27,13 +38,33 @@ while n!="end":
         else:
             num=int(n)
             ob.push(num)
+print("\n")  
+print("Successfully pushed into stack")        
+print("\n")        
 op1=0 
 while op1!="end":
-    op1=input("ENTER METHOD count:  ")  
-    if op1=="count" or op1=="COUNT" or op1=="Count":
+    op1=input("ENTER WHICH METHOD\n POP(1), PEEK(2), ISEMPTY(3), DISPLAY(4) : ")  
+    if  op1=='1':
         print("\n")
-        ob.count()  
+        ob.pop()
         print("\n")
-        print("__________________________________________________________________")     
+        print("__________________________________________________________________")
+    elif op1=='2':
+        print("\n")
+        ob.peek()
+        print("\n")
+        print("__________________________________________________________________")        
+    elif op1=='3':
+        print("\n")
+        ob.isempty()  
+        print("\n")
+        print("__________________________________________________________________")        
+    elif op1=='4':
+        print("\n")
+        print("all elements from top to bottom")
+        ob.display()    
+        print("\n")
+        print("__________________________________________________________________") 
     else:
-        print("invalid input")
+        print("METHOD NOT FOUND")
+        print("__________________________________________________________________")        
