@@ -1,0 +1,29 @@
+class stack:
+    def __init__(self):
+        self.l=[]
+    def Enqueue(self,val):
+        self.l.append(val)
+    def Dequeue(self):
+        if len(self.l)>0:
+         self.l.pop(0)
+         print(self.l[0])
+        else:
+            print("cannot be pop length zero")
+        print("pop",self.l[-1])
+    def peek(self):
+        print("peek",self.l[0])
+    def isempty(self):
+        if len(self.l)==0:
+            print("stack empty")
+        else:
+            print("stack not empty")
+    def size(self):
+        print("size",len(self.l))
+obj=stack()
+obj.Enqueue(10)
+obj.Enqueue(20)
+obj.Enqueue(30)
+obj.Dequeue()
+obj.peek()
+obj.isempty()
+obj.size()
