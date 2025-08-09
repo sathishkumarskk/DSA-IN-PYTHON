@@ -82,3 +82,37 @@ while op1!="end":
     else:
         print("METHOD NOT FOUND")
         print("__________________________________________________________________")        
+
+
+---------EXPLANATION---------------
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None 
+    def insert_at_begin(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+——————————TRACE TEST————————-
+node=[data,next]
+1->new_node= [data=5,next=none]
+      New_node.next=head[none]
+      ‘’head=new_node—>[data=5,next=none]’’
+2->new_node=node=[data=10,next=none]
+      new_node.next=head=[data=5,next=none]
+      head=new_node
+      head=[data=10,data=5,next=none]
+3->
+     new_node=node=[data=15,next=none]
+     new_node.next=[data=10,data=5,next=none]
+     head=new_node
+     head=[data=15,data=10,data=5,next=none]
+4->
+     head=[data=20,data=15,data=10,data=5,next=none]
+5->
+    head=[data=25,data=20,data=15,data=10,data=5,next=none]]
