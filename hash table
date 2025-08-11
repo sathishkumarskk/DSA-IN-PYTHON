@@ -1,0 +1,15 @@
+class hash_table: # inhash table decide the value itself decide value index that stored in list.
+    hash_list=[None]*10
+    def value(self,name):
+      val=0  
+      for i in name:
+        val+=ord(i)
+      return val%10
+    def store(self,name):
+        index=self.value(name)
+        self.hash_list[index]=name
+    def display(self):
+        print(self.hash_list)
+o=hash_table()
+o.store("sathish")
+o.display()
