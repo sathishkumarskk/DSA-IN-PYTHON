@@ -1,0 +1,12 @@
+class linear_search:
+    def value(self,list_value,search):
+        for i in range(0,len(list_value)):
+            if list_value[i]==search:
+                print("value ",search," at index",i)
+                return('')
+        return("not found")   
+list_value=eval(input("enter list element :"))  
+search=int(input("enter target element :"))
+obj=linear_search()
+val=obj.value(list_value,search)
+print(val)
