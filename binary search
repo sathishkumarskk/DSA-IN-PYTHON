@@ -7,7 +7,7 @@ def binary_search():
             min=(left+right)//2
             if l[min]==target:
                 print("value ",target,"at index",min)
-                return("")
+                return("found")
             elif l[min]<target:
                 left=min+1
             else:
