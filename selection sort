@@ -1,0 +1,13 @@
+def sort(n):
+    l=len(n)
+    for i in range(l-1):
+        mini=min(n[i:l])
+        j=i
+        for k in range(i,l):
+            if n[k]==mini:
+                del n[k]
+                break
+        n.insert(i,mini)        
+n=eval(input("enter list: "))
+sort(n)
+print(n)
