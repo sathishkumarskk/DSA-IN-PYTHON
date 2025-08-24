@@ -1,0 +1,17 @@
+l=eval(input("enter list:"))
+empty=[]
+final=[]
+if len(l)==0:
+    print([])
+else:    
+    for i in range(max(l)+1):
+        empty.append(0)
+    for  i in range(0,max(l)+1):
+        c=l.count(i)
+        empty[i]=c
+    for i in range(0,len(empty)):
+        for j in range(empty[i]):
+            final.append(i)
+    print(final)
+NOTE:
+     by default count sort does not works with negative number because it works with indexes
